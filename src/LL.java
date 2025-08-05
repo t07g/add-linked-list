@@ -3,6 +3,10 @@ import org.w3c.dom.Node;
 import java.util.*;
 public class LL {
     node head;
+    private int size;
+    LL(){
+        this.size =0;
+    }
     class node {
         String data;
         node next;
@@ -10,6 +14,7 @@ public class LL {
         node(String data){
             this.data = data;
             this.next = null;
+            size++;
         }
     }
     // add first
@@ -50,6 +55,10 @@ public class LL {
         }
         System.out.println("Null");
     }
+    public int getSize(){
+        return size;
+    }
+
     public static void main(String[] args){
         LL list = new LL();
         list.addfirst("a");
@@ -60,6 +69,8 @@ public class LL {
         list.printList();
         list.addfirst( "this");
         list.printList();
+
+        System.out.println(list.getSize());
 
     }
 }
